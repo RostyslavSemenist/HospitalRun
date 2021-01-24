@@ -9,18 +9,12 @@ namespace HospitalRun
 
         IWebDriver webDriver = new OpenQA.Selenium.Chrome.ChromeDriver();
 
-
         [Test]
         public void LogInInvalid()
         {
-
-
             var loginPage = new LoginPageObject(webDriver);
             loginPage
                 .LoginInvalid();
-
-
-
         }
         [TearDown]
         public void TearDown()
