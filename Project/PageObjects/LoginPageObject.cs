@@ -16,7 +16,6 @@ namespace HospitalRun.PageObjects
 
         const string _expectedPage = ("http://demo.hospitalrun.io/#/patients");
 
-
         //UILocators
 
         private readonly By _usernameField = By.CssSelector("#identification");
@@ -24,16 +23,10 @@ namespace HospitalRun.PageObjects
         private readonly By _signInButton = By.CssSelector(".btn-lg");
         private readonly By _alert = By.CssSelector(".alert");
 
-        //Randomizer
-        
-        
-
         public LoginPageObject(IWebDriver webDriver)
         {
             _webDriver = webDriver;
         }
-
-
 
         public void LoginValid()
        {
@@ -88,12 +81,6 @@ namespace HospitalRun.PageObjects
 
 
         }
-
-
-
-       
-
-        
 
         
     }

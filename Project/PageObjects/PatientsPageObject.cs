@@ -17,7 +17,6 @@ namespace HospitalRun.PageObjects
         private readonly By _NewRequestButton = By.CssSelector("#ember2165");
         private readonly By _ReturnMedicationButton = By.CssSelector("#ember2209");
 
-
         const string _expectedPage = ("http://demo.hospitalrun.io/#/login");
 
         public PatientsPageObject(IWebDriver webDriver)
@@ -48,13 +47,7 @@ namespace HospitalRun.PageObjects
             Assert.That(MedicationListIsFull == true);
 
             _webDriver.FindElement(_NewRequestButton).Click();
-
-  
-
-
-
         }
-
-       
+    
     }
 }

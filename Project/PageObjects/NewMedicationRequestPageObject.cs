@@ -34,10 +34,8 @@ namespace HospitalRun.PageObjects
         private readonly By _CloseButton = By.CssSelector(".octicon");
         private readonly By _PageName = By.CssSelector(".view-current-title");
 
-        
-
-        
-
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////
+      
         public NewMedicationRequestPageObject(IWebDriver webDriver)
         {
             _webDriver = webDriver;
@@ -106,17 +104,7 @@ namespace HospitalRun.PageObjects
             Thread.Sleep(2000);
             Assert.IsTrue(_webDriver.FindElement(_PageName).Displayed);
 
-
-
-
-
-
-
-
-
         }
-
-
 
     }
 }

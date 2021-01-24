@@ -13,14 +13,9 @@ namespace HospitalRun
         [Test]
         public void LogIn_Valid()
         {
-            
-
             var loginPage = new LoginPageObject(webDriver);
             loginPage
-                .LoginValid();
-           
-
-                
+                .LoginValid();              
         }
         [TearDown]
         public void TearDown()
