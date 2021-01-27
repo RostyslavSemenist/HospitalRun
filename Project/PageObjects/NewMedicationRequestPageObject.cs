@@ -19,10 +19,8 @@ namespace HospitalRun.PageObjects
         private readonly By _VisitButton = By.CssSelector("#visit-ember2363");
         private readonly By _NeededVisitDate = By.XPath("//*[@id='visit-ember2363']/option[2]");
         private readonly By _MedicationField = By.CssSelector("#inventoryItemTypeAhead-ember2385");
-
         private readonly By _NeededMedication = By.XPath("//*[@id='ember2389']/span/div/div/div[1]");
         private readonly By _PrescriptionField = By.CssSelector("#prescription-ember2417");
-
         private readonly By _PrecriptionDateField = By.CssSelector("#display_prescriptionDate-ember2440");
         private readonly By _QuantityRequestedField = By.CssSelector("#quantity-ember2459");
         private readonly By _RefillsField = By.CssSelector("#refills-ember2466");
@@ -78,7 +76,6 @@ namespace HospitalRun.PageObjects
 
             Random random = new Random();
             int value = random.Next(1, 5);
-
             quantityRequestedField.SendKeys(value.ToString());
 
             var refillsField = _webDriver.FindElement(_RefillsField);
