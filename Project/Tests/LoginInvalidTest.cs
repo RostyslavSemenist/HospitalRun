@@ -1,6 +1,6 @@
-﻿using NUnit.Framework;
+﻿using HospitalRun.PageObjects;
+using NUnit.Framework;
 using OpenQA.Selenium;
-using HospitalRun.PageObjects;
 
 namespace HospitalRun
 {

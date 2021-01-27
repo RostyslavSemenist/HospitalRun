@@ -1,6 +1,6 @@
+using HospitalRun.PageObjects;
 using NUnit.Framework;
 using OpenQA.Selenium;
-using HospitalRun.PageObjects;
 
 namespace HospitalRun
 {
@@ -8,14 +8,14 @@ namespace HospitalRun
     {
 
         IWebDriver webDriver = new OpenQA.Selenium.Chrome.ChromeDriver();
-        
+
 
         [Test]
         public void LogIn_Valid()
         {
             var loginPage = new LoginPageObject(webDriver);
             loginPage
-                .LoginValid();              
+                .LoginValid();
         }
         [TearDown]
         public void TearDown()
@@ -26,6 +26,5 @@ namespace HospitalRun
 
     }
 }
-       
 
-    
+

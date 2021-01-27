@@ -2,7 +2,6 @@
 using OpenQA.Selenium;
 using System;
 using System.Threading;
-using OpenQA.Selenium.Support.UI;
 namespace HospitalRun.PageObjects
 {
     class NewMedicationRequestPageObject
@@ -13,18 +12,17 @@ namespace HospitalRun.PageObjects
         private const string _PatientName = ("Test Patient");
         private const string _Medication = ("Pramoxine");
         private const string _PrescriptionText = ("Testing prescription");
-        private const string _PatientFullName = ("Test Patient - P00201");
 
         //UILocators
-        private readonly By _PatientField = By.CssSelector("#patientTypeAhead-ember2318");
+        private readonly By _PatientField = By.CssSelector("#ember1078");
         private readonly By _NeededPatient = By.XPath("//*[@id='ember2354']/span/div/div/div[4]/strong");
         private readonly By _VisitButton = By.CssSelector("#visit-ember2363");
         private readonly By _NeededVisitDate = By.XPath("//*[@id='visit-ember2363']/option[2]");
         private readonly By _MedicationField = By.CssSelector("#inventoryItemTypeAhead-ember2385");
-        
+
         private readonly By _NeededMedication = By.XPath("//*[@id='ember2389']/span/div/div/div[1]");
         private readonly By _PrescriptionField = By.CssSelector("#prescription-ember2417");
-        
+
         private readonly By _PrecriptionDateField = By.CssSelector("#display_prescriptionDate-ember2440");
         private readonly By _QuantityRequestedField = By.CssSelector("#quantity-ember2459");
         private readonly By _RefillsField = By.CssSelector("#refills-ember2466");
@@ -34,8 +32,6 @@ namespace HospitalRun.PageObjects
         private readonly By _CloseButton = By.CssSelector(".octicon");
         private readonly By _PageName = By.CssSelector(".view-current-title");
 
-        /////////////////////////////////////////////////////////////////////////////////////////////////////////
-      
         public NewMedicationRequestPageObject(IWebDriver webDriver)
         {
             _webDriver = webDriver;
@@ -55,7 +51,7 @@ namespace HospitalRun.PageObjects
 
             Thread.Sleep(1000);
             _webDriver.FindElement(_VisitButton).Click();
-            
+
             Thread.Sleep(2000);
             _webDriver.FindElement(_NeededVisitDate).Click();
 
@@ -68,14 +64,11 @@ namespace HospitalRun.PageObjects
             prescriptionField.Click();
             prescriptionField.SendKeys(_PrescriptionText);
 
-            //DateTime today = DateTime.Today.Date;
-         
             var prescriptionDateField = _webDriver.FindElement(_PrecriptionDateField);
             prescriptionDateField.Click();
             prescriptionDateField.Clear();
 
             DateTime now = DateTime.Now;
-
             prescriptionDateField.SendKeys(now.ToString("d"));
 
             Thread.Sleep(1000);
@@ -103,8 +96,6 @@ namespace HospitalRun.PageObjects
 
             Thread.Sleep(2000);
             Assert.IsTrue(_webDriver.FindElement(_PageName).Displayed);
-
         }
-
     }
 }

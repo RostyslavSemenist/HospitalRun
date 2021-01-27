@@ -1,9 +1,6 @@
-﻿using NUnit.Framework;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using HospitalRun.PageObjects;
+using NUnit.Framework;
 using OpenQA.Selenium;
-using HospitalRun.PageObjects;
 
 namespace HospitalRun
 {
@@ -25,8 +22,6 @@ namespace HospitalRun
             var newRequest = new NewMedicationRequestPageObject(webDriver);
             newRequest
                 .RequestANewMedication();
-            
-            
         }
 
         [TearDown]
@@ -34,6 +29,5 @@ namespace HospitalRun
         {
             webDriver.Quit();
         }
-
     }
 }

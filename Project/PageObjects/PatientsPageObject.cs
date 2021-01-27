@@ -11,12 +11,12 @@ namespace HospitalRun.PageObjects
         //UILocators
         private readonly By _settingsButton = By.CssSelector("span.octicon-gear");
         private readonly By _LogoutButton = By.CssSelector(".logout");
-        private readonly By _MedicationButton = By.CssSelector("#ember767");
-        private readonly By _RequestsButton = By.CssSelector("#ember2143");
-        private readonly By _CompletedButton = By.CssSelector("#ember2146");
-        private readonly By _NewRequestButton = By.CssSelector("#ember2165");
-        private readonly By _ReturnMedicationButton = By.CssSelector("#ember2209");
-
+        private readonly By _MedicationButton = By.XPath("//*[text()='Medication']");
+        private readonly By _RequestsButton = By.XPath("//*[text()='Requests']");
+        private readonly By _CompletedButton = By.XPath("//*[text()='Completed']");
+        private readonly By _NewRequestButton = By.XPath("//*[text()='New Request']");
+        private readonly By _ReturnMedicationButton = By.XPath("//*[text()='Return Medication']");
+        //Data
         const string _expectedPage = ("http://demo.hospitalrun.io/#/login");
 
         public PatientsPageObject(IWebDriver webDriver)
@@ -37,17 +37,13 @@ namespace HospitalRun.PageObjects
 
         public void NewRequest()
         {
-            bool MedicationListIsFull;
             _webDriver.FindElement(_MedicationButton).Click();
             _webDriver.FindElement(_RequestsButton);
             _webDriver.FindElement(_CompletedButton);
             _webDriver.FindElement(_NewRequestButton);
             _webDriver.FindElement(_ReturnMedicationButton);
-            MedicationListIsFull = true;
-            Assert.That(MedicationListIsFull == true);
 
             _webDriver.FindElement(_NewRequestButton).Click();
         }
-    
     }
 }
