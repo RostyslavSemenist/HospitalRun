@@ -6,9 +6,7 @@ namespace HospitalRun
 {
     class LogoutTest
     {
-
         IWebDriver webDriver = new OpenQA.Selenium.Chrome.ChromeDriver();
-
 
         [Test]
         public void Logout()
@@ -16,7 +14,7 @@ namespace HospitalRun
             var loginPage = new LoginPageObject(webDriver);
             loginPage
                 .LoginValid();
-
+            
             var patientsPage = new PatientsPageObject(webDriver);
             patientsPage
                 .Logout();
@@ -27,6 +25,5 @@ namespace HospitalRun
         {
             webDriver.Quit();
         }
-
     }
 }
